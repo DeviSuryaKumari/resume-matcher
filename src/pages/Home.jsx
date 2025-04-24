@@ -114,7 +114,7 @@ export default function Home() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-blue-50 to-indigo-100 flex flex-col items-center justify-center">
+        <div className="min-h-screen bg-gradient-to-r from-blue-50 to-indigo-100 flex flex-col items-center pt-48">
             <header className="text-center mb-2">
                 <h1 className="text-6xl font-extrabold text-blue-900 drop-shadow-md">ResuMatch AI</h1>
                 <p className="text-2xl font-semibold text-gray-700 mt-4 mb-6 max-w-lg mx-auto">
