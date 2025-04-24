@@ -34,10 +34,22 @@ export default function Home() {
                             matchScore: 78,
                         },
                         {
-                            title: 'Frontend Developer',
-                            company: 'DesignWorks',
-                            description: 'DesignWorks is seeking a frontend developer to build modern web interfaces...',
-                            matchScore: 78,
+                            title: 'Software Engineer',
+                            company: 'TechCorp',
+                            description: 'We are looking for a skilled software engineer to join our team...',
+                            matchScore: 85,
+                        },
+                        {
+                            title: 'Software Engineer',
+                            company: 'TechCorp',
+                            description: 'We are looking for a skilled software engineer to join our team...',
+                            matchScore: 85,
+                        },
+                        {
+                            title: 'Software Engineer',
+                            company: 'TechCorp',
+                            description: 'We are looking for a skilled software engineer to join our team...',
+                            matchScore: 85,
                         },
                         {
                             title: 'Frontend Developer',
@@ -50,6 +62,30 @@ export default function Home() {
                             company: 'DesignWorks',
                             description: 'DesignWorks is seeking a frontend developer to build modern web interfaces...',
                             matchScore: 78,
+                        },
+                        {
+                            title: 'Software Engineer',
+                            company: 'TechCorp',
+                            description: 'We are looking for a skilled software engineer to join our team...',
+                            matchScore: 85,
+                        },
+                        {
+                            title: 'Frontend Developer',
+                            company: 'DesignWorks',
+                            description: 'DesignWorks is seeking a frontend developer to build modern web interfaces...',
+                            matchScore: 78,
+                        },
+                        {
+                            title: 'Software Engineer',
+                            company: 'TechCorp',
+                            description: 'We are looking for a skilled software engineer to join our team...',
+                            matchScore: 85,
+                        },
+                        {
+                            title: 'Software Engineer',
+                            company: 'TechCorp',
+                            description: 'We are looking for a skilled software engineer to join our team...',
+                            matchScore: 85,
                         },
                         {
                             title: 'Frontend Developer',
