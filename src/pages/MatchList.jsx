@@ -1,8 +1,8 @@
-// src/components/MatchList.jsx
+// src/pages/MatchList.jsx
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import JobCard from './JobCard';
-import JobModal from './JobModal';
+import JobCard from '../components/JobCard';
+import JobModal from '../components/JobModal';
 
 export default function MatchList() {
     const { state } = useLocation();

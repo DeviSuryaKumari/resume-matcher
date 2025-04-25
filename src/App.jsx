@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import MatchList from './components/MatchList';
+import MatchList from './pages/MatchList';
 
 function App() {
   return (

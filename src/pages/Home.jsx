@@ -2,11 +2,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import React from 'react';
 import ResumeUpload from '../components/ResumeUpload';
 
 export default function Home() {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null); // Error state
 
     const handleUpload = async (file) => {
         const formData = new FormData();
@@ -14,6 +16,8 @@ export default function Home() {
 
         try {
             setLoading(true);
+            setError(null);  // Reset error state
+
             //   const response = await axios.post("http://localhost:5000/api/match", formData, {
             //     headers: { "Content-Type": "multipart/form-data" },
             //   });
@@ -102,12 +106,13 @@ export default function Home() {
                 }, 2000); // 2 seconds delay
             });
 
+            // throw new Error();
+
             // Navigate to MatchList page with job data
-            // navigate("/matches", { state: { jobs: response.data.jobs } });
             navigate("/matches", { state: { jobs: response.data.jobs } });
         } catch (error) {
             console.error("Upload failed:", error);
-            alert("Something went wrong while uploading resume.");
+            setError("Something went wrong while uploading resume."); // Set error message
         } finally {
             setLoading(false);
         }
@@ -122,7 +127,7 @@ export default function Home() {
                 </p>
             </header>
             <div className="w-full max-w-2xl bg-white rounded-xl shadow-2xl p-8 space-y-8">
-                <ResumeUpload onUpload={handleUpload} loading={loading} />
+                <ResumeUpload onUpload={handleUpload} loading={loading} error={error} />
             </div>
         </div>
     );
