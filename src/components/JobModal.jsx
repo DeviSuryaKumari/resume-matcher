@@ -14,7 +14,7 @@ export default function JobModal({ job, onClose }) {
       onClick={handleOverlayClick}
     >
       <div
-        className="bg-white p-8 rounded-lg shadow-lg w-full max-w-[75%] max-h-[75%] overflow-y-auto relative"
+        className="bg-white p-8 rounded-lg shadow-lg w-[90%] md:w-[60%] lg:w-[40%] max-h-[75%] overflow-y-auto relative"
         onClick={handleModalClick}
       >
         <button
