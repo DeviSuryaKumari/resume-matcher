@@ -22,11 +22,11 @@ export default function Home() {
             //     headers: { "Content-Type": "multipart/form-data" },
             //   });
 
-            let response = await fetch("/dummy_data.json");
+            let response = await fetch("/mock_data.json");
             response = await response.json();
 
             // Simulate delay if needed
-            await new Promise(resolve => setTimeout(resolve, 3000));
+            await new Promise(resolve => setTimeout(resolve, 3500));
 
             console.log(response)
 
