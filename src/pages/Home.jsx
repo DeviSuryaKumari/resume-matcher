@@ -26,7 +26,7 @@ export default function Home() {
             response = await response.json();
 
             // Simulate delay if needed
-            await new Promise(resolve => setTimeout(resolve, 3500));
+            await new Promise(resolve => setTimeout(resolve, 3000));
 
             console.log(response)
 

@@ -20,5 +20,5 @@
 
 .modal-exit-active {
   opacity: 0;
-  transition: opacity 200ms;
+  transition: opacity 250ms;
 }
