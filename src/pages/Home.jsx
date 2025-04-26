@@ -12,104 +12,22 @@ export default function Home() {
 
     const handleUpload = async (file) => {
         const formData = new FormData();
-        formData.append("resume", file);
+        formData.append("file", file);
 
         try {
             setLoading(true);
             setError(null);  // Reset error state
 
-            //   const response = await axios.post("http://localhost:5000/api/match", formData, {
-            //     headers: { "Content-Type": "multipart/form-data" },
-            //   });
+              const response = await axios.post("http://127.0.0.1:8000/get_matches/", formData, {
+                headers: { "Content-Type": "multipart/form-data" },
+              });
 
-            // Simulate network delay
-            const response = await new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve({
-                        data: {
-                            jobs: [
-                                {
-                                    title: 'Software Engineer',
-                                    company: 'TechCorp',
-                                    description: 'We are looking for a skilled software engineer to join our team...',
-                                    matchScore: 85,
-                                },
-                                {
-                                    title: 'Frontend Developer',
-                                    company: 'DesignWorks',
-                                    description: 'DesignWorks is seeking a frontend developer to build modern web interfaces...',
-                                    matchScore: 78,
-                                },
-                                {
-                                    title: 'Software Engineer',
-                                    company: 'TechCorp',
-                                    description: 'We are looking for a skilled software engineer to join our team...',
-                                    matchScore: 85,
-                                },
-                                {
-                                    title: 'Software Engineer',
-                                    company: 'TechCorp',
-                                    description: 'We are looking for a skilled software engineer to join our team...',
-                                    matchScore: 85,
-                                },
-                                {
-                                    title: 'Software Engineer',
-                                    company: 'TechCorp',
-                                    description: 'We are looking for a skilled software engineer to join our team...',
-                                    matchScore: 85,
-                                },
-                                {
-                                    title: 'Frontend Developer',
-                                    company: 'DesignWorks',
-                                    description: 'DesignWorks is seeking a frontend developer to build modern web interfaces...',
-                                    matchScore: 78,
-                                },
-                                {
-                                    title: 'Frontend Developer',
-                                    company: 'DesignWorks',
-                                    description: 'DesignWorks is seeking a frontend developer to build modern web interfaces...',
-                                    matchScore: 78,
-                                },
-                                {
-                                    title: 'Software Engineer',
-                                    company: 'TechCorp',
-                                    description: 'We are looking for a skilled software engineer to join our team...',
-                                    matchScore: 85,
-                                },
-                                {
-                                    title: 'Frontend Developer',
-                                    company: 'DesignWorks',
-                                    description: 'DesignWorks is seeking a frontend developer to build modern web interfaces...',
-                                    matchScore: 78,
-                                },
-                                {
-                                    title: 'Software Engineer',
-                                    company: 'TechCorp',
-                                    description: 'We are looking for a skilled software engineer to join our team...',
-                                    matchScore: 85,
-                                },
-                                {
-                                    title: 'Software Engineer',
-                                    company: 'TechCorp',
-                                    description: 'We are looking for a skilled software engineer to join our team...',
-                                    matchScore: 85,
-                                },
-                                {
-                                    title: 'Frontend Developer',
-                                    company: 'DesignWorks',
-                                    description: 'DesignWorks is seeking a frontend developer to build modern web interfaces...',
-                                    matchScore: 78,
-                                },
-                            ]
-                        }
-                    });
-                }, 2000); // 2 seconds delay
-            });
+            console.log(response)
 
             // throw new Error();
 
             // Navigate to MatchList page with job data
-            navigate("/matches", { state: { jobs: response.data.jobs } });
+            navigate("/matches", { state: { jobs: response.data } });
         } catch (error) {
             console.error("Upload failed:", error);
             setError("Something went wrong while uploading resume."); // Set error message
