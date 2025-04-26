@@ -18,16 +18,22 @@ export default function Home() {
             setLoading(true);
             setError(null);  // Reset error state
 
-              const response = await axios.post("http://127.0.0.1:8000/get_matches/", formData, {
-                headers: { "Content-Type": "multipart/form-data" },
-              });
+            //   const response = await axios.post("http://127.0.0.1:8000/get_matches/", formData, {
+            //     headers: { "Content-Type": "multipart/form-data" },
+            //   });
+
+            let response = await fetch("../../public/dummy_data.json");
+            response = await response.json();
+
+            // Simulate delay if needed
+            await new Promise(resolve => setTimeout(resolve, 1000));
 
             console.log(response)
 
             // throw new Error();
 
             // Navigate to MatchList page with job data
-            navigate("/matches", { state: { jobs: response.data } });
+            navigate("/matches", { state: { jobs: response.data.jobs } });
         } catch (error) {
             console.error("Upload failed:", error);
             setError("Something went wrong while uploading resume."); // Set error message

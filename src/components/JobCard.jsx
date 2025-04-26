@@ -15,5 +15,3 @@ export default function JobCard({ job, onClick }) {
     </div>
   );
 }
-
-  
