@@ -22,7 +22,7 @@ export default function Home() {
             //     headers: { "Content-Type": "multipart/form-data" },
             //   });
 
-            let response = await fetch("../../public/dummy_data.json");
+            let response = await fetch("/dummy_data.json");
             response = await response.json();
 
             // Simulate delay if needed
